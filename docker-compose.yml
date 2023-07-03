@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  database:
+    image: mariadb
+    environment:
+      MARIADB_RANDOM_ROOT_PASSWORD: yes
+      MARIADB_DATABASE: ${OMP_DB_NAME:-omp}
+      MARIADB_USER: ${OMP_DB_USER:-omp_user}
+      MARIADB_PASSWORD: ${OMP_DB_PASSWORD:-s3cret}
+    ports:
+      - 3306:3306

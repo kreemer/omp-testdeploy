@@ -1,0 +1,90 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "e580696d5dbbf8d6825e6a7950687f72",
+    "packages": [
+        {
+            "name": "pkp/omp",
+            "version": "3.4.0.1",
+            "dist": {
+                "type": "tar",
+                "url": "https://pkp.sfu.ca/omp/download/omp-3.4.0-1.tar.gz"
+            },
+            "require": {
+                "ub-unibe-ch/pkp-installer-plugin": "*"
+            },
+            "type": "pkp-app"
+        },
+        {
+            "name": "ub-unibe-ch/center-bop-books",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ub-unibe-ch/pkp-omp",
+                "reference": "main"
+            },
+            "require": {
+                "ub-unibe-ch/pkp-installer-plugin": "*"
+            },
+            "type": "pkp-theme",
+            "extra": {
+                "pkp-plugin-name": "bop"
+            }
+        },
+        {
+            "name": "ub-unibe-ch/pkp-installer-plugin",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "installer",
+                "reference": "fb0ee74524b6b2508eb182a7b6aafd99a2d31cbe"
+            },
+            "require": {
+                "composer-plugin-api": "^2.0"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "UbUnibeCh\\PKPInstaller\\AppInstallerPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "UbUnibeCh\\PKPInstaller\\": "src/"
+                }
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "ub-unibe-ch/superplugin",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ub-unibe-ch/pkp-omp",
+                "reference": "main"
+            },
+            "require": {
+                "ub-unibe-ch/pkp-installer-plugin": "*"
+            },
+            "type": "pkp-plugin",
+            "extra": {
+                "pkp-plugin-type": "reports"
+            }
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

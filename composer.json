@@ -1,0 +1,73 @@
+{
+    "name": "kreemer/omp-testdeploy",
+    "type": "project",
+    "require": {
+        "pkp/omp": "3.4.0.1",
+        "ub-unibe-ch/center-bop-books": "1.0.0",
+        "ub-unibe-ch/superplugin": "1.0.0"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "installer"
+        },
+        {
+            "type": "package",
+            "package": [
+                {
+                    "name": "pkp/omp",
+                    "type": "pkp-app",
+                    "version": "3.4.0.1",
+                    "dist": {
+                        "url": "https://pkp.sfu.ca/omp/download/omp-3.4.0-1.tar.gz",
+                        "type": "tar"
+                    },
+                    "require": {
+                        "ub-unibe-ch/pkp-installer-plugin": "*"
+                    }
+                },
+                {
+                    "name": "ub-unibe-ch/center-bop-books",
+                    "type": "pkp-theme",
+                    "version": "1.0.0",
+                    "extra": {
+                        "pkp-plugin-name": "bop"
+                    },
+                    "source": {
+                        "url": "https://github.com/ub-unibe-ch/pkp-omp",
+                        "type": "git",
+                        "reference": "main"
+                    },
+                    "require": {
+                        "ub-unibe-ch/pkp-installer-plugin": "*"
+                    }
+                },
+                {
+                    "name": "ub-unibe-ch/superplugin",
+                    "type": "pkp-plugin",
+                    "version": "1.0.0",
+                    "extra": {
+                        "pkp-plugin-type": "reports"
+                    },
+                    "source": {
+                        "url": "https://github.com/ub-unibe-ch/pkp-omp",
+                        "type": "git",
+                        "reference": "main"
+                    },
+                    "require": {
+                        "ub-unibe-ch/pkp-installer-plugin": "*"
+                    }
+                }
+            ]
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "ub-unibe-ch/pkp-installer-plugin": true
+        }
+    },
+    "scripts": {
+        "update-config": [ "UbUnibeCh\\PKPInstaller\\Script::updateConfig" ]
+    }
+}
